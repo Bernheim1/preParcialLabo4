@@ -1,0 +1,47 @@
+
+    <table class="fl-table" *ngIf="peliculaDetalle != null">
+        <tbody>
+        <tr>
+            <th>ID</th>
+            <td>
+                {{peliculaDetalle.id}}
+            </td>
+        </tr>
+        <tr>
+            <th>NOMBRE</th>
+            <td>
+                {{peliculaDetalle.Nombre}}
+            </td>
+        </tr>
+        <tr>
+            <th>TIPO</th>
+            <td>
+                {{peliculaDetalle.tipo}}
+            </td>
+        </tr>
+        <tr>
+            <th>ACTOR</th>
+            <td>
+                {{peliculaDetalle.actor}}
+            </td>
+        </tr>
+        <tr>
+            <th>FECHA DE ESTRENO</th>
+            <td>
+                {{peliculaDetalle.fechaDeEstreno}}
+            </td>
+        </tr>
+        <tr>
+            <th>CANTIDAD DE PUBLICO</th>
+            <td>
+                {{peliculaDetalle.cantidadDePublico}}
+            </td>
+        </tr>
+        <tr>
+            <th>POSTER</th>
+            <td>
+                <img [src]="peliculaDetalle.fotoDeLaPelicula" width="70px" height="70px">
+            </td>
+        </tr>
+        </tbody>
+        </table>

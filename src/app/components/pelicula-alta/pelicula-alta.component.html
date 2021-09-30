@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.80.0">
+    <title>Checkout example · Bootstrap v4.6</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/checkout/">
+
+    
+
+
+
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+
+  </head>
+  <body class="bg-light">
+    <br>
+    <br>
+<div class="container">
+  <div class="py-5 text-center">
+    <h2>Alta pelicula</h2>
+  </div>
+  <div class="row">
+      <div class="col-md-4 order-md-2 mb-4">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-muted">ACTORES</span>
+        </h4>
+        <app-tabla-actor (actorSeleccionado)="this.eventoActor($event)"></app-tabla-actor>
+      </div>
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Alta pelicula</h4>
+        <form class="needs-validation" [formGroup]="grupoDeControles" (ngSubmit)="this.agregarPelicula()">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label>Nombre</label>
+              <input type="text" class="form-control" formControlName="nombre" placeholder="" value="" required>
+              <small *ngIf="grupoDeControles.controls.nombre.errors?.required && grupoDeControles.controls.nombre.touched" class="text-danger">El nombre es requerido</small>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>Tipo</label>
+              <select class="form-control" formControlName="tipo">
+                  <option value="Terror">Terror</option>
+                  <option value="Comedia">Comedia</option>
+                  <option value="Amor">Amor</option>
+                  <option value="Otros">Otros</option>
+              </select>
+              <small class="text-danger" *ngIf="grupoDeControles.controls.tipo.errors?.required && grupoDeControles.controls.tipo.touched">El tipo es requerido</small>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>Fecha de estreno</label>
+              <input type="text" class="form-control" formControlName="fechaDeEstreno" placeholder="" value="" required>
+              <small class="text-danger" *ngIf="grupoDeControles.controls.fechaDeEstreno.errors?.required && grupoDeControles.controls.fechaDeEstreno.touched">La fecha de estreno es requerida</small>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label>Cantidad de publico</label>
+                <input type="text" class="form-control" formControlName="cantidadDePublico" placeholder="" value="" required>
+                <small class="text-danger" *ngIf="grupoDeControles.controls.cantidadDePublico.errors?.required && grupoDeControles.controls.cantidadDePublico.touched">La cantidad de publico es requerida</small>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label>Actor</label>
+                <input type="text" class="form-control" formControlName="actor" placeholder="" value="" required>
+                <small class="text-danger" *ngIf="grupoDeControles.controls.actor.errors?.required && grupoDeControles.controls.actor.touched">El actor es requerido</small>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label>Foto de la pelicula</label>
+                <input type="file" class="form-control" formControlName="fotoDeLaPelicula" placeholder="" value="" required>
+                <small class="text-danger" *ngIf="grupoDeControles.controls.fotoDeLaPelicula.errors?.required && grupoDeControles.controls.fotoDeLaPelicula.touched">La foto de la pelicula es requerida</small>
+              </div>
+          </div>
+          <hr class="mb-4">
+          <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="grupoDeControles.invalid">Agregar pelicula</button>
+        </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      
+        <script src="form-validation.js"></script>
+  </body>
+</html>

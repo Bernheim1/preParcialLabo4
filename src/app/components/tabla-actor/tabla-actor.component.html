@@ -1,0 +1,7 @@
+<ul class="list-group mb-3">
+    <li class="list-group-item d-flex justify-content-between lh-condensed" *ngFor="let item of actoresBD" (click)="this.setOutput(item.nombre, item.apellido)">
+      <div>
+        <h6 class="my-0">{{item.nombre}} {{item.apellido}}</h6>
+      </div>
+    </li>
+  </ul>
